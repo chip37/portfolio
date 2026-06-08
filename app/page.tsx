@@ -1,4 +1,31 @@
-const projects = [
+type Project = {
+  name: string;
+  url?: string;
+  buttonLabel?: string;
+  image?: string;
+  imageAlt?: string;
+  description: string;
+  tech: string[];
+};
+
+const projects: Project[] = [
+  {
+    name: "AI Cartoon Studio",
+    url: "https://ai-cartoon-studio.vercel.app",
+    buttonLabel: "Live Demo",
+    image: "/images/ai-cartoon-studio.png",
+    imageAlt: "AI Cartoon Studio character selection screen",
+    description:
+      "A choice-based AI cartoon creation app where users pick a hero, adventure, friend, and problem to generate a cartoon story experience.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "OpenAI",
+      "Vercel",
+    ],
+  },
   {
     name: "AI Council",
     url: "https://getaicouncil.app",
@@ -237,6 +264,13 @@ export default function Home() {
               className="flex min-h-[25rem] flex-col rounded-lg border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-black/15"
               key={project.name}
             >
+              {project.image ? (
+                <img
+                  alt={project.imageAlt ?? `${project.name} screenshot`}
+                  className="mb-5 aspect-video w-full rounded-md border border-white/10 object-cover"
+                  src={project.image}
+                />
+              ) : null}
               <div>
                 <h3 className="text-2xl font-bold text-white">
                   {project.name}
@@ -263,7 +297,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Live Project
+                    {project.buttonLabel ?? "Live Project"}
                   </a>
                 ) : (
                   <span className="inline-flex rounded-md border border-white/10 px-4 py-2.5 text-sm font-semibold text-slate-400">
