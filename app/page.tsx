@@ -34,16 +34,15 @@ const projects: Project[] = [
     tech: ["Next.js", "Supabase", "OpenAI API", "Stripe", "Vercel"],
   },
   {
-    name: "Hanke AI Diagnostic Assistant",
-    url: "https://hankeai.vercel.app",
+    name: "Manufacturing Diagnostic Assistant",
+    url: "/manufacturing-diagnostic-assistant",
+    buttonLabel: "View Case Study",
     description:
-      "AI-assisted diagnostic web application for industrial crimp machine troubleshooting and technician support workflows.",
+      "AI-powered diagnostic assistant that helps technicians retrieve troubleshooting information and capture repair knowledge through natural language conversations.",
     tech: [
-      "Next.js",
-      "React",
-      "OpenAI API",
-      "Vercel",
-      "Power Apps",
+      "Microsoft Copilot Studio",
+      "Power Automate",
+      "SharePoint",
       "Microsoft Teams",
     ],
   },
